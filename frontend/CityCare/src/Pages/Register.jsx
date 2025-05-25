@@ -77,6 +77,7 @@ function Register() {
           <Link to="/login" className="text-green-700 hover:underline">
             Login
           </Link>
+         
         </p>
       </form>
     </div>

@@ -10,14 +10,14 @@ function Login() {
   const [error, setError] = useState("");
 
   // Redirect if already logged in
-  useEffect(() => {
-    if (user) {
-      if (user.role === "admin") navigate("/admin");
-      else if (user.role === "citizen") navigate("/citizen");
-      else if (user.role === "volunteer") navigate("/volunteer");
-      else navigate("/");
-    }
-  }, [user, navigate]);
+  // useEffect(() => {
+  //   if (user) {
+  //     if (user.role === "admin") navigate("/admin");
+  //     else if (user.role === "citizen") navigate("/citizen");
+  //     else if (user.role === "volunteer") navigate("/volunteer");
+  //     else navigate("/");
+  //   }
+  // }, [user, navigate]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -34,10 +34,12 @@ function Login() {
       const { user, token } = res.data;
       login(user, token); // Save in context/localStorage
       // Redirect based on role
-      if (user.role === "admin") navigate("/admin");
-      else if (user.role === "citizen") navigate("/citizen");
-      else if (user.role === "volunteer") navigate("/volunteer");
-      else navigate("/");
+      alert("shdh")
+      navigate("/citizen");
+      // if (user.role === "admin") navigate("/admin");
+      // else if (user.role === "citizen") navigate("/citizen");
+      // else if (user.role === "volunteer") navigate("/volunteer");
+      // else navigate("/");
     } catch (err) {
       console.error(err);
       setError(

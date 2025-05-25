@@ -10,22 +10,24 @@ import CitizenDashboard from "./Pages/CitizenDashboard";
 import AdminDashboard from "./Pages/AdminDashboard";
 import VolunteerDashboard from "./Pages/volunteerDashboard";
 import ReportIssues from "./Pages/ReportIssue";
+import CityConnectHomepage from "./Pages/Homepage";
 
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<CityConnectHomepage />} />
+       <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
           {/* <Route path="/register" element={<Register />} /> */}
 
           <Route
             path="/citizen"
             element={
-              <ProtectedRoute roles={["citizen"]}>
+              // <ProtectedRoute roles={["citizen"]}>
                 <CitizenDashboard />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
 
